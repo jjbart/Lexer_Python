@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+import sys
+import parser
+
+
+if __name__ == '__main__':
+    p = parser.Parser(sys.argv[1])
+
+    try:
+        tree = p.parse()
+        tree.eval()
+
+    except parser.CliteSyntaxError as e:
+        print(e)
